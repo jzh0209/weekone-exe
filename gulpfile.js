@@ -26,3 +26,10 @@ gulp.task('watch', function() {
 })
 
 gulp.task('dev', gulp.series('sass', 'server', 'watch'))
+
+//压缩js
+gulp.task('bUglify', function() {
+    return gulp.src(['./src/js/*.js', '!./src/js/*.min.js'])
+        .pipe(uglify())
+        .pipe(gulp.dest('./build/js'))
+})

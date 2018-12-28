@@ -111,7 +111,19 @@
     </div>
     <script src="./js/libs/ajax.js"></script>
     <script src="./js/libs/bscroll.js"></script>
-
+    <script>
+        ajax({
+            url: "../mock/list.json",
+            dataType: 'json',
+            success: function(res) {
+                console.log(res)
+            }
+        })
+        var scroll = new BScroll('.main', {
+            probeType: 2,
+            click: true
+        })
+    </script>
 </body>
 
 </html>
